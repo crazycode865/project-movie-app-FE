@@ -1,0 +1,13 @@
+mat-card {
+  width: 26%;
+  display: flexbox;
+  justify-content: center;
+  margin-left: 450px;
+}
+mat-card img {
+  width: 400px;
+  height: 370px;
+}
+.conatiner {
+  background-image: url(src/assets/images/bckg.jpg);
+}

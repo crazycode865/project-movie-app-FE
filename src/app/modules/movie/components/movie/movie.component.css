@@ -1,0 +1,41 @@
+/* * {
+  display: table-row;
+  flex-direction: row;
+}
+.example-card {
+  max-width: 400px;
+  display: flexbox;
+}
+.example-header-image {
+  background-size: cover;
+}
+mat-card {
+  display: inline-table;
+  margin: 20px;
+} */
+
+* {
+  display: table-row;
+  flex-direction: row;
+}
+
+.example-card {
+  max-width: 400px;
+  /* display: inline-table; */
+}
+
+.example-header-image {
+  background-size: cover;
+}
+
+mat-card {
+  display: inline-table;
+  margin: 20px;
+}
+mat-card:hover {
+  transform: translateY(-30px);
+  background: linear-gradient(45deg, #b9b9b9, #4f29cd);
+  box-shadow: 0 20px 30px;
+  font-size: 1.8em;
+  color: #ec4011;
+}

@@ -1,0 +1,28 @@
+<div class="conatiner">
+  <mat-card *ngIf="movie" class="example-card mat-elevation-z6">
+    <button mat-raised-button onclick="history.back()" color="primary">
+      < Go Back
+    </button>
+    <img mat-card-md-image src="{{ movie.movieImg }}" alt="Not Available" />
+    <div>
+      <h2>Name:{{ movie.movieName }}</h2>
+    </div>
+    <div>Language:{{ movie.language }}</div>
+    <br />
+    <div>Type:{{ movie.type }}</div>
+    <br />
+    <div>Format:{{ movie.format }}</div>
+    <br />
+    <div>
+      <h2>Ratings:{{ movie.ratings }}</h2>
+    </div>
+    <br />
+    <button
+      color="primary"
+      mat-raised-button
+      [routerLink]="['/show', movie.movieId]"
+    >
+      Book
+    </button>
+  </mat-card>
+</div>

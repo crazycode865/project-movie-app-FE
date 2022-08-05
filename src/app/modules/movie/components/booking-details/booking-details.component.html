@@ -1,0 +1,23 @@
+<div class="container">
+  <mat-card class="example-card mat-elevation-z8">
+    Movie name:
+    <h2>{{ bookingDetails.movie.movieName | uppercase }}</h2>
+    <br />
+    Booking Date:
+    <h2>{{ bookingDetails.bookingDate | date: "medium" }}</h2>
+    <br />
+    Seat Type:
+    <h2>{{ bookingDetails.seatType | uppercase }}</h2>
+    <br />
+    Total Seat:
+    <h2>{{ bookingDetails.totalSeats }}</h2>
+    <br />
+    Total cost:
+    <h2>{{ bookingDetails.totalCost }}</h2>
+    <br />
+    <h2>{{ bookingDetails.show.showEndTime }}</h2>
+    <!-- Show start Time: -->
+    <!-- <h2>{{ bookingDetails.show.showStartTime | date: "medium" }}</h2> -->
+    <br />
+  </mat-card>
+</div>

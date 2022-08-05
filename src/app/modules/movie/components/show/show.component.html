@@ -1,0 +1,48 @@
+<!-- <div>
+  <img mat-card-lg-image src="{{ movie.movieImg }}" alt="Comming soon" />
+  <mat-divider></mat-divider>
+  <h1>{{ show.showName }}</h1>
+  Show start Time:
+  <h2>{{ show.showStartTime | date: "medium" }}</h2>
+  <mat-divider [ngStyle]="{ width: '50%' }"></mat-divider>
+  Show End Time:
+  <h2>{{ show.showEndTime }}</h2>
+  Price:
+  <h2>{{ show.price }}</h2>
+</div> -->
+<div class="background">
+  <button mat-raised-button onclick="history.back()" color="primary">
+    Go Back
+  </button>
+  <div class="container">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{ movie?.movieName }}</mat-card-title>
+        <mat-card-subtitle>{{ show?.showName }}</mat-card-subtitle>
+      </mat-card-header>
+      <img
+        mat-card-image
+        src="{{ movie?.movieImg }}"
+        alt="Photo of a Shiba Inu"
+      />
+      <mat-card-content>
+        Show start Time:
+        <h2>{{ show?.showStartTime | date: "medium" }}</h2>
+        Show End Time:
+        <h2>{{ show?.showEndTime | date: "medium" }}</h2>
+        Price:
+        <h2>{{ show?.price }}</h2>
+      </mat-card-content>
+      <mat-card-actions>
+        <button
+          mat-raised-button
+          color="primary"
+          [routerLink]="['/booking', show?.showId]"
+        >
+          Book
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

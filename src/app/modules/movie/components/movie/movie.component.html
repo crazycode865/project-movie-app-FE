@@ -1,0 +1,30 @@
+<!-- {{ movies | json }} -->
+<div class="container">
+  <mat-card class="example-card" *ngFor="let movie of movies">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{ movie.movieName }}</mat-card-title>
+      <mat-card-subtitle>{{ movie.language }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-lg-image src="{{ movie.movieImg }}" alt="Comming soon" />
+    <mat-card-content> </mat-card-content>
+    <mat-card-actions>
+      <button color="warn" mat-raised-button (click)="onSubmit(movie)">
+        Movie Details
+      </button>
+      <button
+        color="warn"
+        mat-raised-button
+        [routerLink]="['/show', movie.movieId]"
+      >
+        Book
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+<!-- <h1>Great Day</h1>
+<ul>
+  <li *ngFor="let movie of movies">
+    Name{{ movie.movieName }} Lan{{ movie.language }}
+  </li>
+</ul> -->

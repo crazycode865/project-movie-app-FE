@@ -1,0 +1,70 @@
+<div>
+  <mat-card>
+    <form [formGroup]="addForm" (ngSubmit)="addBooking(addForm)">
+      <mat-form-field
+        appearance="fill"
+        style="background-color: rgb(184, 232, 184)"
+      >
+        <mat-label>Choose a date</mat-label>
+        <input
+          matInput
+          [matDatepicker]="picker"
+          formControlName="bookingDate"
+        />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <br />
+      <br />
+      <mat-divider></mat-divider>
+      <mat-form-field
+        appearance="outline"
+        style="background-color: rgb(184, 232, 184)"
+      >
+        <mat-label>Select Seat Type</mat-label>
+        <mat-select formControlName="seatType">
+          <mat-option *ngFor="let seat of seatArray" value="{{ seat }}">{{
+            seat
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br />
+      <br />
+      <mat-divider></mat-divider>
+      <mat-form-field
+        appearance="outline"
+        style="background-color: rgb(184, 232, 184)"
+      >
+        <input
+          matInput
+          type="number"
+          placeholder="Enter total seat"
+          formControlName="totalSeats"
+        />
+      </mat-form-field>
+      <br />
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        routerLinkActive="router-link-active"
+      >
+        Confirm
+      </button>
+    </form>
+    <br />
+    <button
+      mat-raised-button
+      color="primary"
+      [routerLink]="['/booking-details', bookingDetails?.bookingId]"
+    >
+      Booking Details
+    </button>
+    <br />
+    <br />
+    <button mat-raised-button onclick="history.back()" color="warn">
+      Go Back
+    </button>
+  </mat-card>
+</div>

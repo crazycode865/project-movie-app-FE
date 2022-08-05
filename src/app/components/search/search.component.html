@@ -1,0 +1,32 @@
+{{ movies | json }}
+<mat-card
+  class="example-card mat-elevation-z6"
+  *ngFor="let movie of searchValue"
+>
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title [ngStyle]="{ 'text-align': 'center' }">{{
+      movie.movieName | uppercase
+    }}</mat-card-title>
+    <mat-card-subtitle>{{ movie.language }}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-lg-image src="{{ movie.movieImg }}" alt="Comming soon" />
+  <mat-card-content> </mat-card-content>
+  <mat-card-actions>
+    <button
+      color="warn"
+      mat-raised-button
+      (click)="onSubmit(movie)"
+      [routerLink]="['/movie-details', movie.movieId]"
+    >
+      Movie Details
+    </button>
+    <button
+      color="warn"
+      mat-raised-button
+      [routerLink]="['/show', movie.movieId]"
+    >
+      Book
+    </button>
+  </mat-card-actions>
+</mat-card>

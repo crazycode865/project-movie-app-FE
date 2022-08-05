@@ -1,0 +1,17 @@
+<div>
+  <mat-toolbar color="primary" class="mat-elevation-z6">
+    <div *ngFor="let type of typesArray">
+      <!-- <button
+        mat-button
+        [routerLink]="['/movie', category.toLowerCase(), type.toLowerCase()]"
+      > -->
+      <button
+        mat-button
+        [routerLink]="['/movie', category.toLowerCase(), type.toLowerCase()]"
+      >
+        {{ type }}
+      </button>
+    </div>
+  </mat-toolbar>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,49 @@
+<div>
+  <mat-toolbar class="mat-elevation-z6">
+    <span>MoviesTan🏰</span>
+    <mat-icon arial-hidden="false" aria-label="{2:label} icon">echo</mat-icon>
+
+    <mat-form-field>
+      <input #temp matInput placeholder="Enter Your Choice" name="search" />
+      <button mat-icon-button>
+        <mat-icon
+          aria-label="label"
+          (click)="getMovies(temp.value)"
+          [routerLink]="['search']"
+          >search</mat-icon
+        >
+      </button>
+    </mat-form-field>
+    <span [ngClass]="'filler'"></span>
+    <button
+      *ngIf="!loggedIn"
+      mat-raised-button
+      routerLink="/login"
+      color="primary"
+    >
+      Login
+    </button>
+    <button *ngIf="loggedIn" mat-raised-button color="warn" (click)="logOut()">
+      Logout
+    </button>
+  </mat-toolbar>
+</div>
+<div>
+  <mat-toolbar class="mat-elevation-z6">
+    <span>
+      <mat-icon arial-hidden="false" aria-label="{2:label} icon}"
+        >menu</mat-icon
+      >
+    </span>
+
+    <button mat-button [routerLink]="['/home']">Home</button>
+    <div *ngFor="let category of categories">
+      <button mat-button [routerLink]="['/movie', category.toLowerCase()]">
+        {{ category | titlecase }}
+      </button>
+    </div>
+  </mat-toolbar>
+</div>
+
+<router-outlet></router-outlet>
+<app-search [searchValue]="movies"></app-search>
